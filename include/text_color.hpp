@@ -1,3 +1,10 @@
+/**
+ * \file text_color.hpp
+ * \brief Biblioteca para colorir texto no terminal usando códigos ANSI.
+ * \author Matheus Miguel
+ * \date 2026
+ */
+
 #ifndef COLOR_H
 #define COLOR_H
 
@@ -36,6 +43,10 @@ using std::wstring;
 #include <array>
 using std::array;
 
+/**
+ * \namespace Color
+ * \brief Namespace contendo constantes e funções para colorir texto no terminal.
+ */
 namespace Color {
 // Alias
 using value_t = short;
@@ -75,6 +86,13 @@ static constexpr array<value_t, 14> color_list{31, 32, 33, 34, 35, 36, 37,
  * @param modifier Modifier code to apply to the message.
  * @return A string with the embedded color/modifier escape codes.
  */
+/**
+ * \brief Retorna uma string com a mensagem colorida.
+ * \param msg A mensagem a ser exibida.
+ * \param color Código da cor a ser aplicada.
+ * \param modifier Código do modificador a ser aplicado.
+ * \return Uma string com os códigos de escape de cor/modificador incorporados.
+ */
 inline string tcolor(const string &msg, short color = Color::WHITE,
                      short modifier = Color::REGULAR) {
   ostringstream oss;
@@ -83,6 +101,13 @@ inline string tcolor(const string &msg, short color = Color::WHITE,
 }
 
 /// Wide char version
+/**
+ * \brief Versão wide char da função tcolor.
+ * \param msg A mensagem wide char a ser exibida.
+ * \param color Código da cor a ser aplicada.
+ * \param modifier Código do modificador a ser aplicado.
+ * \return Uma wstring com os códigos de escape de cor/modificador incorporados.
+ */
 inline wstring wtcolor(const wstring &msg, short color = Color::WHITE,
                        short modifier = Color::REGULAR) {
   wostringstream oss;

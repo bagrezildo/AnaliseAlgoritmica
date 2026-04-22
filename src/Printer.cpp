@@ -1,3 +1,10 @@
+/**
+ * \file Printer.cpp
+ * \brief Implementações da classe Printer.
+ * \author Matheus Miguel
+ * \date 2026
+ */
+
 #include "Printer.hpp"
 #include "text_color.hpp"
 

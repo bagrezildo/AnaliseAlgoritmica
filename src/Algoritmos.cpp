@@ -1,3 +1,10 @@
+/**
+ * \file Algoritmos.cpp
+ * \brief Implementações dos algoritmos de busca e ordenação.
+ * \author Matheus Miguel
+ * \date 2026
+ */
+
 #include "Algoritmos.hpp"
 #include <cmath>
 
@@ -64,6 +71,14 @@ void BubbleSort(vector<int>& v){
 }
 
 // --- Funções auxiliares do Merge Sort ---
+
+/**
+ * \brief Função auxiliar para mesclar duas sublistas ordenadas.
+ * \param v O vetor a ser mesclado.
+ * \param esq Índice esquerdo.
+ * \param meio Índice do meio.
+ * \param dir Índice direito.
+ */
 void Merge(vector<int>& v, int esq, int meio, int dir) {
     int n1 = meio - esq + 1;
     int n2 = dir - meio;
@@ -82,6 +97,12 @@ void Merge(vector<int>& v, int esq, int meio, int dir) {
     while (j < n2) { v[k] = R[j]; j++; k++; }
 }
 
+/**
+ * \brief Função recursiva auxiliar para o Merge Sort.
+ * \param v O vetor a ser ordenado.
+ * \param esq Índice esquerdo.
+ * \param dir Índice direito.
+ */
 void MergeSortHelper(vector<int>& v, int esq, int dir) {
     if (esq < dir) {
         int meio = esq + (dir - esq) / 2;
@@ -99,8 +120,14 @@ void MergeSort(vector<int>& v) {
 
 // ---
 
+/**
+ * \brief Função auxiliar para particionar o vetor no Quick Sort.
+ * \param v O vetor a ser particionado.
+ * \param baixo Índice inferior.
+ * \param alto Índice superior.
+ * \return O índice do pivô após particionamento.
+ */
 int Particao(vector<int>& v, int baixo, int alto) {
-    // Escolhe o pivô no meio para evitar o pior caso O(n^2) em arrays invertidos
     int meio = baixo + (alto - baixo) / 2;
     swap(v[meio], v[alto]); 
     
@@ -117,6 +144,12 @@ int Particao(vector<int>& v, int baixo, int alto) {
     return (i + 1);
 }
 
+/**
+ * \brief Função recursiva auxiliar para o Quick Sort.
+ * \param v O vetor a ser ordenado.
+ * \param baixo Índice inferior.
+ * \param alto Índice superior.
+ */
 void QuickSortHelper(vector<int>& v, int baixo, int alto) {
     if (baixo < alto) {
         int pi = Particao(v, baixo, alto);

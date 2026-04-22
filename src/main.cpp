@@ -1,3 +1,10 @@
+/**
+ * \file main.cpp
+ * \brief Função principal do programa de análise de algoritmos.
+ * \author Matheus Miguel
+ * \date 2026
+ */
+
 #include <iostream>
 #include <vector>
 #include <chrono>
@@ -80,9 +87,6 @@ int main(int argc, char* argv[]){
         AlgoritmoOrdenacao funcao = par.second;
 
         for (int n : tamanhosN){
-            // if(n > 100000){ //Limita a execução das ordenações a tamanhos de 100 milhões para evitar travamentos
-            //     break;
-            // }
             
             cout << "Testando " << nomeAlgoritmo << " com N = " << n << "...\n";
 
